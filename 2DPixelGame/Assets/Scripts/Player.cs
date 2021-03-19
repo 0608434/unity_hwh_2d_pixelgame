@@ -26,6 +26,10 @@ public class Player : MonoBehaviour
     public string cName = "貓咪" ;
     [Header("虛擬搖桿")]
     public FixedJoystick joystick;
+    [Header("變形元件")]
+    public Transform tra;
+    [Header("動畫元件")]
+    public Animator ani;
 
     //方法語法 Method - 儲存複雜的程式區塊或演算法
     //修飾詞 類型 名稱 () {程式區塊或演算法}
@@ -34,7 +38,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// 移動
     /// </summary>
-    
+
     private void Move() 
     {
         print("移動");
@@ -43,6 +47,12 @@ public class Player : MonoBehaviour
 
         float v = joystick.Horizontal;
         print("垂直:" + v);
+
+        //變形元件.位移(水平*速度*一幀的時間，垂直*速度*一幀的時間，0)
+        tra.Translate(h * speed * Time.deltaTime, v * speed * Time.deltaTime, 0);
+
+        ani.SetFloat("水平", h);
+        ani.SetFloat("垂直", v);
 
     }
 
