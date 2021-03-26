@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lv: 1
-  speed: 1
+  speed: 3
   isDead: 0
   cName: "\u8C93\u54AA"
   joystick: {fileID: 1745658191}
@@ -902,6 +902,15 @@ Tilemap:
   m_GameObject: {fileID: 920479567}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: -21, y: -7, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 56
+      m_TileSpriteIndex: 12
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -20, y: -7, z: 0}
     second:
       serializedVersion: 2
@@ -1226,6 +1235,15 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: -21, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 40
+      m_TileSpriteIndex: 41
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -20, y: -6, z: 0}
     second:
       serializedVersion: 2
@@ -1546,6 +1564,15 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 52
       m_TileSpriteIndex: 56
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -21, y: -5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 38
+      m_TileSpriteIndex: 40
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2474,11 +2501,11 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 54c163923b8150d4bbc9e3246e3cd997, type: 2}
   - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: f92c3db8056ab14419663c124159bd5a, type: 2}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 716b695bacc21294d93efce30038f223, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: f0f3962462ce9d64b8a18a272884365f, type: 2}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: c9e9eb2a93a1a4c448d11eea7e7fb298, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: abad1ad372fc61249bc06412cc5f0ce0, type: 2}
@@ -2510,7 +2537,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 6a55d5e7854a80442b3de7dfcdcf3161, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: d5626e0c06882ee4489a10e67c3b502b, type: 2}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: e547cc598d9c5424597ce6d822191efb, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -2537,7 +2564,7 @@ Tilemap:
     m_Data: {fileID: 21300026, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 21300094, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300054, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
@@ -2593,9 +2620,9 @@ Tilemap:
     m_Data: {fileID: 21300090, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300100, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 21300098, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 21300096, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300024, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
@@ -2628,7 +2655,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300116, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 166
+  - m_RefCount: 169
     m_Data:
       e00: 1
       e01: 0
@@ -2647,7 +2674,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 166
+  - m_RefCount: 169
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -12584,8 +12611,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  limitY: {x: -5, y: 5}
-  limitX: {x: -5, y: 5}
+  limitY: {x: -3, y: 3}
+  limitX: {x: -12, y: 6}
+  player: {fileID: 519820512}
 --- !u!1 &1705244460
 GameObject:
   m_ObjectHideFlags: 0
