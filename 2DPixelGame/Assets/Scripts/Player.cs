@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI; //引用介面API
 
 public class Player : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
     [Header("角色是否死亡")]
     public bool isDead = false;
     [Header("角色名稱"), Tooltip("這是角色的名稱")]
-    public string cName = "貓咪" ;
+    public string cName = "貓咪";
     [Header("虛擬搖桿")]
     public FixedJoystick joystick;
     [Header("變形元件")]
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
         //繪製圖示 球體(中心點，半徑)
         Gizmos.DrawWireSphere(transform.position, rangeAttack);
 
-        
+
     }
 
 
@@ -59,7 +60,7 @@ public class Player : MonoBehaviour
     /// 移動
     /// </summary>
 
-    private void Move() 
+    private void Move()
     {
         //print("移動");
         float h = joystick.Horizontal;
@@ -83,7 +84,7 @@ public class Player : MonoBehaviour
         aud.PlayOneShot(soundAttack, 0.5f);
 
         //2D 物理 圓形碰撞 (中心點，半徑，方向，距離，圖層)
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, rangeAttack, transform.up,0, 1 << 8);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, rangeAttack, transform.up, 0, 1 << 8);
 
         //如果 碰到物件存在 並且 碰到的物件 標籤 為 取得道具腳本並呼叫道具掉落方法
         if (hit && hit.collider.tag == "道具") hit.collider.GetComponent<Item>().DropProp();
@@ -104,8 +105,8 @@ public class Player : MonoBehaviour
     //開始事件:撥放後執行一次
     private void Start()
     {
-        
-        
+
+
     }
     //更新事件:大約一秒執行60次 60FPS
     private void Update()
@@ -115,4 +116,25 @@ public class Player : MonoBehaviour
         Move();
     }
 
+    [Header("吃金塊音效")]
+
+    public AudioClip soundEat;
+
+    [Header("金塊數量")]
+    public Text textCoin;
+
+    private int coin;
+
+    //觸發事件 - 進入:兩個物件必須有一個勾選 Is Trigger
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag=="金塊")
+        {
+            coin++;
+            aud.PlayOneShot(soundEat);
+            Destroy(collision.gameObject);
+            textCoin.text = "金幣:" + coin;
+
+        }
+    }
 }
