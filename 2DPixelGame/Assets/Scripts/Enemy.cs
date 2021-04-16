@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         //玩家變形=尋找遊戲物件("物件名稱").變形
-        player = gameObject.Find("人物").transform；
+        player = GameObject.Find("人物").transform;
     }
 
 
@@ -22,14 +22,26 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawSphere(transform.position, rangeTrack);
     }
 
+    private void Update()
+    {
+        Track();
+    }
+
     /// <summary>
     /// 追蹤玩家
     /// </summary>
     private void Track() 
     {
         //距離 等於 三維向量 的 距離(A點，B點)
-        float.dis = Vector3.Distance(transform.position, player.position);
+        float dis = Vector3.Distance(transform.position, player.position);
         print("距離:" + dis);
+
+        //如果 距離 小魚等於 追蹤範圍 才開始追蹤
+        if (dis <= rangeTrack) 
+        {
+            print("追蹤");
+        }
+
 
     }
 
