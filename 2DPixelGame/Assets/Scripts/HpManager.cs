@@ -12,10 +12,10 @@ public class HpManager : MonoBehaviour
     /// <param name="hp">當前血量</param>
     /// <param name="hpBar">血量最大值</param>
 
-    public void UpdateHpBar(float hp, float hpBar) 
+    public void UpdateHpBar(float hp, float hpMax) 
     {
-    
-
+        //血條.填滿數值 = 當前血量 / 血量最大值
+        bar.fillAmount = hp / hpMax;
 
     }
 
