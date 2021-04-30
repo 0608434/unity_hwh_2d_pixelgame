@@ -101,13 +101,13 @@ public class Player : MonoBehaviour
 
     }
 
-
+    //要被其他腳本呼叫也要設定為公開public
     /// <summary>
     /// 受傷
     /// </summary>
     /// <param name="damage">接收到的傷害值</param>
 
-    private void Hit(float damage)
+    public void Hit(float damage)
     {
         hp -= damage;                            //扣除傷害值
         hpManager.UpdateHpBar(hp, hpMax);        //更新血條

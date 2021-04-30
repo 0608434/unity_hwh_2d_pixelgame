@@ -91,6 +91,13 @@ public class Enemy : MonoBehaviour
 
             timer = 0;                          //計時器歸零
             psAttack.Play();                    //播放攻擊特效
+           
+            
+            //2D 碰撞 = 2D 物理.覆蓋圓形範圍(中心點，半徑)
+            Collider2D hit = Physics2D.OverlapCircle(transform.position, rangeAttack);
+            //碰到的物件 取得元件 <玩家>().受傷(攻擊力)
+            hit.GetComponent<Player>().Hit(attack);
+
         }
 
        
