@@ -14,10 +14,8 @@ public class Enemy : MonoBehaviour
     public float cdAttack = 3;
     [Header("攻擊力"), Range(0, 1000)]
     public float attack = 20;
-    [Header("角色是否死亡")]
-    public bool isDead = false;
 
-
+    private bool isDead = false;
     private Transform player;
     
     /// <summary>
