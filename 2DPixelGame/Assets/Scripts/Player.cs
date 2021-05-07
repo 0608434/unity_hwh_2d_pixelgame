@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
 
 
 
-
     //事件:繪製圖示
     private void OnDrawGizmos()
     {
@@ -72,6 +71,9 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
+
+        if (isDead) return;    //如果死亡就跳出
+
         //print("移動");
         float h = joystick.Horizontal;
         //print("水平:" + h);
@@ -90,6 +92,10 @@ public class Player : MonoBehaviour
     //要被按鈕呼叫必須設定為公開 public
     public void Attack()
     {
+
+        if (isDead) return;    //如果死亡就跳出
+
+
         //音效來源，播放一次(音效片段，音量)
         aud.PlayOneShot(soundAttack, 0.5f);
 
@@ -111,13 +117,17 @@ public class Player : MonoBehaviour
     {
         hp -= damage;                            //扣除傷害值
         hpManager.UpdateHpBar(hp, hpMax);        //更新血條
-        StartCoroutine(hpManager.ShowDamage());  //啟動協同程序(顯示傷害值())
+        StartCoroutine(hpManager.ShowDamage(damage));  //啟動協同程序(顯示傷害值())
+
+
+        if (hp <= 0) Dead();               //如果血量<=0就死亡
 
     }
 
     private void Dead()
     {
-
+        hp = 0;
+        isDead = true;
     }
 
     //事件 - 特定時間會執行的方法

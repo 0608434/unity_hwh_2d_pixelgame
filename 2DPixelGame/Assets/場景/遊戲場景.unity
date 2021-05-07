@@ -19171,7 +19171,7 @@ MonoBehaviour:
   speed: 2
   psAttack: {fileID: 5131741}
   cdAttack: 3
-  attack: 20
+  attack: 100
 --- !u!114 &1745658191 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,

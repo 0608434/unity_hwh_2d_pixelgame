@@ -25,11 +25,18 @@ public class HpManager : MonoBehaviour
 
     }
 
-    public IEnumerator ShowDamage() 
+    /// <summary>
+    /// 顯示傷害值
+    /// </summary>
+
+
+    public IEnumerator ShowDamage(float damage) 
     {
 
         RectTransform rect =Instantiate(rectDamage, transform);  //生成傷害數值在血條系統內
         rect.anchoredPosition = new Vector2(0, 200);             //指定座標
+        rect.GetComponent<Text>().text = damage.ToString();      //更新數值
+
 
         float y = rect.anchoredPosition.y;                       //取得原始 y 軸
 
@@ -41,6 +48,8 @@ public class HpManager : MonoBehaviour
 
         
         }
+
+        Destroy(rect.gameObject,0.5f);                                //刪除傷害數值物件
 
 
     }
