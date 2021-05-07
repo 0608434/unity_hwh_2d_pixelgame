@@ -43,8 +43,13 @@ public class Player : MonoBehaviour
     public float hp = 200;
     [Header("血條系統")]
     public HpManager hpManager;
+    [Header("攻擊力"), Range(0, 1000)]
+    public float attack = 20;
 
     private float hpMax;
+
+
+
     
 
 
