@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI; //引用介面API
+using UnityEngine.SceneManagement;    //引用場景管理API
+
 
 public class Player : MonoBehaviour
 {
@@ -128,7 +130,17 @@ public class Player : MonoBehaviour
     {
         hp = 0;
         isDead = true;
+        Invoke("Replay", 2);    //延遲呼叫("方法名稱",延遲時間)
+
     }
+
+    private void Replay() 
+    {
+
+        SceneManager.LoadScene("遊戲場景");
+
+    }
+
 
     //事件 - 特定時間會執行的方法
     //開始事件:撥放後執行一次
