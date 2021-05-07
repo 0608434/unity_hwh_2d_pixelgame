@@ -14,10 +14,15 @@ public class Enemy : MonoBehaviour
     public float cdAttack = 3;
     [Header("攻擊力"), Range(0, 1000)]
     public float attack = 20;
+    [Header("經驗值"), Range(0, 500)]
+    public float exp = 30;
 
-    private bool isDead = false;
+
+
+
     private Transform player;
-    
+    private Player _player;
+
     /// <summary>
     /// 計時器
     /// </summary>
@@ -29,6 +34,7 @@ public class Enemy : MonoBehaviour
     [Header("血條系統")]
     public HpManager hpManager;
 
+    private bool isDead = false;
     private float hpMax;
 
     private void Start()
@@ -37,6 +43,9 @@ public class Enemy : MonoBehaviour
 
         //玩家變形=尋找遊戲物件("物件名稱").變形
         player = GameObject.Find("人物").transform;
+        _player = player.GetComponent<Player>();
+
+
     }
 
 
