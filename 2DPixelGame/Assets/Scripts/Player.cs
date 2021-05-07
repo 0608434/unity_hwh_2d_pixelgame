@@ -111,6 +111,9 @@ public class Player : MonoBehaviour
 
         //如果 碰到物件存在 並且 碰到的物件 標籤 為 取得道具腳本並呼叫道具掉落方法
         if (hit && hit.collider.tag == "道具") hit.collider.GetComponent<Item>().DropProp();
+        //如果 打擊的標籤是 敵人 就對她造成傷害
+        if (hit && hit.collider.tag == "敵人") hit.collider.GetComponent<Enemy>().Hit(attack);
+
 
     }
 
@@ -130,6 +133,10 @@ public class Player : MonoBehaviour
         if (hp <= 0) Dead();               //如果血量<=0就死亡
 
     }
+
+    /// <summary>
+    /// 死亡
+    /// </summary>
 
     private void Dead()
     {
