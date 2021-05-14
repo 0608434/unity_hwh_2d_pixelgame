@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;    //引用場景管理API
 
 public class Player : MonoBehaviour
 {
+    #region 欄位
     //註解
 
     //欄位語法
@@ -51,12 +52,13 @@ public class Player : MonoBehaviour
     private bool isDead = false;
     private float hpMax;
 
+    #endregion
 
 
-    
 
 
 
+    #region 方法
 
     //事件:繪製圖示
     private void OnDrawGizmos()
@@ -157,6 +159,27 @@ public class Player : MonoBehaviour
     }
 
 
+
+    private float exp;
+
+    /// <summary>
+    /// 經驗值控制
+    /// </summary>
+    /// <param name="getExp">接收到的經驗值</param>
+    public void Exp(float getExp) 
+    {
+
+        exp += getExp;
+        print("經驗值:" + exp);
+
+    }
+
+
+    #endregion
+
+
+    #region 事件
+
     //事件 - 特定時間會執行的方法
     //開始事件:撥放後執行一次
     private void Start()
@@ -193,4 +216,7 @@ public class Player : MonoBehaviour
 
         }
     }
+
+    #endregion
+
 }
