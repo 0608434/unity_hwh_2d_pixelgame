@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -6462646553965206412, guid: 0c0cfaed64b344149bafe46e12b3fdfc,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -124,7 +124,7 @@ MonoBehaviour:
   psAttack: {fileID: 2099739302963507336}
   cdAttack: 3
   attack: 100
-  isDead: 0
+  exp: 30
   hp: 200
   hpManager: {fileID: 8360159659541413896}
 --- !u!70 &2099739301452270180
