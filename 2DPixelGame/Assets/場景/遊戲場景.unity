@@ -983,7 +983,7 @@ MonoBehaviour:
   soundAttack: {fileID: 8300000, guid: 9f33fd42865783d4e8a3e20981c2a680, type: 3}
   hp: 200
   hpManager: {fileID: 1096152376}
-  attack: 50
+  attack: 20
   textLv: {fileID: 2086779613}
   imgExp: {fileID: 798106421}
   expData: {fileID: 11400000, guid: 24c07048f0cdf674bbb9e5f5ed1d9c65, type: 2}
@@ -14516,7 +14516,7 @@ PrefabInstance:
     - target: {fileID: 2099739301452270181, guid: 5191249b8647c6a4da44a15ba1ded235,
         type: 3}
       propertyPath: exp
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2099739301452270201, guid: 5191249b8647c6a4da44a15ba1ded235,
         type: 3}
