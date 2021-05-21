@@ -46,11 +46,18 @@ public class Player : MonoBehaviour
     public float attack = 20;
     [Header("等級文字")]
     public Text textLv;
-
+    [Header("吃金塊音效")]
+    public AudioClip soundEat;
+    [Header("金塊數量")]
+    public Text textCoin;
+    
 
 
     private bool isDead = false;
     private float hpMax;
+    public int coin;
+
+    public float attackWeapon;
 
     #endregion
 
@@ -109,7 +116,7 @@ public class Player : MonoBehaviour
 
 
         //音效來源，播放一次(音效片段，音量)
-        aud.PlayOneShot(soundAttack, 0.5f);
+        aud.PlayOneShot(soundAttack, 0.03f);
 
         //2D 物理 圓形碰撞 (中心點，半徑，方向，距離，圖層)
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, rangeAttack, transform.up, 0, 1 << 8);
@@ -117,7 +124,9 @@ public class Player : MonoBehaviour
         //如果 碰到物件存在 並且 碰到的物件 標籤 為 取得道具腳本並呼叫道具掉落方法
         if (hit && hit.collider.tag == "道具") hit.collider.GetComponent<Item>().DropProp();
         //如果 打擊的標籤是 敵人 就對她造成傷害
-        if (hit && hit.collider.tag == "敵人") hit.collider.GetComponent<Enemy>().Hit(attack);
+        if (hit && hit.collider.tag == "敵人") hit.collider.GetComponent<Enemy>().Hit(attack+attackWeapon);
+        //如果 打擊的標籤是 NPC 就對開啟商店
+        if (hit && hit.collider.tag == "NPC") hit.collider.GetComponent<NPC>().OpenShop();
 
 
     }
@@ -229,6 +238,11 @@ public class Player : MonoBehaviour
     //開始事件:撥放後執行一次
     private void Start()
     {
+
+        //給予玩家起始金幣
+        coin = 10;
+        textCoin.text = "金幣:" + coin;
+
         hpMax = hp;   //取得血量最大值
 
         //利用公式寫入經驗值資料 - 一等 100；兩等 200 .....
@@ -250,14 +264,6 @@ public class Player : MonoBehaviour
         Move();
     }
 
-    [Header("吃金塊音效")]
-
-    public AudioClip soundEat;
-
-    [Header("金塊數量")]
-    public Text textCoin;
-
-    private int coin;
 
     //觸發事件 - 進入:兩個物件必須有一個勾選 Is Trigger
     private void OnTriggerEnter2D(Collider2D collision)
